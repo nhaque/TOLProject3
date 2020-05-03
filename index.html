@@ -35,6 +35,34 @@
 
       <button class="btn3" onclick="getAnswer()">Next</button>
     </div>
+    <div class="background" id="Correct" style="display:none;">
+      <div class="feedback">
+        <br><br><br>
+        Unfortunately you are wrong. 1 time per day is not enough.
+        <br><br>
+        You should at least brush twice a day to reach the threshold frequency.
+        <br><br>
+        Besides, you need to reach the threshold duration but not necessary to brush too long.
+        <br><br><br>
+        <div style="margin-top: 6%; text-align: center;">
+          <a onclick="location.reload()" style="cursor:pointer; margin-right: 50px;"><img src="images/retry.png"></a>
+          <a href="q2.html"><img src="images/next-question.png"></a>
+        </div>
+      </div>
+    </div>
+    <div class="background" id="Wrong" style="display:none;">
+      <div class="feedback">
+        <br><br><br>
+        Congratulations!
+        <br><br>
+        You need to reach the threshold frequency and duration to ensure your teeth are thoroughly cleaned.
+        <br><br><br>
+        <div style="margin-top: 6%; text-align: center;">
+          <a onclick="location.reload()" style="cursor:pointer; margin-right: 50px;"><img src="images/retry.png"></a>
+          <a href="q2.html"><img src="images/next-question.png"></a>
+        </div>
+      </div>
+    </div>
 
     <div id="page3">
       <label class="notes">
