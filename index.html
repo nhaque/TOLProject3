@@ -157,52 +157,52 @@
 
     </script>
 
-    <script type="text/javascript">
-      let requestURL = 'content.json';
-      let request = new XMLHttpRequest();
-      request.open('GET', requestURL);
-      request.responseType = 'text';
-      request.send();
+<!--    <script type="text/javascript">-->
+<!--      let requestURL = 'content.json';-->
+<!--      let request = new XMLHttpRequest();-->
+<!--      request.open('GET', requestURL);-->
+<!--      request.responseType = 'text';-->
+<!--      request.send();-->
 
-      request.onload = function() {
-        let contentText = request.response;
-        let content = JSON.parse(contentText);
-        // let content = request.response;
-        let question = content['questions'];
+<!--      request.onload = function() {-->
+<!--        let contentText = request.response;-->
+<!--        let content = JSON.parse(contentText);-->
+<!--        // let content = request.response;-->
+<!--        let question = content['questions'];-->
 
-        let optionA = document.getElementById('optionA');
-        let optionB = document.getElementById('optionB');
-        let optionC = document.getElementById('optionC');
-        let optionD = document.getElementById('optionD');
+<!--        let optionA = document.getElementById('optionA');-->
+<!--        let optionB = document.getElementById('optionB');-->
+<!--        let optionC = document.getElementById('optionC');-->
+<!--        let optionD = document.getElementById('optionD');-->
 
-        correctAnswer = question[0].correct_answer;
+<!--        correctAnswer = question[0].correct_answer;-->
 
-        optionA.innerHTML = question[0].A_q;
-        optionB.innerHTML = question[0].B_q;
-        optionC.innerHTML = question[0].C_q;
-        optionD.innerHTML = question[0].D_q;
-      };
+<!--        optionA.innerHTML = question[0].A_q;-->
+<!--        optionB.innerHTML = question[0].B_q;-->
+<!--        optionC.innerHTML = question[0].C_q;-->
+<!--        optionD.innerHTML = question[0].D_q;-->
+<!--      };-->
 
-      function getAnswer() {
-        radio = document.getElementsByName("question");
-        select = false;
+<!--      function getAnswer() {-->
+<!--        radio = document.getElementsByName("question");-->
+<!--        select = false;-->
 
-        for (i = 0; i < radio.length; i++) {
-          if (radio[i].checked) {
-            select = true;
-            if (radio[i].value === correctAnswer) {
-              document.getElementById("question").style.display="none";
-              document.getElementById("Correct").style.display="block";
-            } else {
-              document.getElementById("question").style.display="none";
-              document.getElementById("Wrong").style.display="block";
-            }
-          }
-        }
+<!--        for (i = 0; i < radio.length; i++) {-->
+<!--          if (radio[i].checked) {-->
+<!--            select = true;-->
+<!--            if (radio[i].value === correctAnswer) {-->
+<!--              document.getElementById("question").style.display="none";-->
+<!--              document.getElementById("Correct").style.display="block";-->
+<!--            } else {-->
+<!--              document.getElementById("question").style.display="none";-->
+<!--              document.getElementById("Wrong").style.display="block";-->
+<!--            }-->
+<!--          }-->
+<!--        }-->
 
-        if (select === false) alert("Please select an answer!");
-      }
-    </script>
+<!--        if (select === false) alert("Please select an answer!");-->
+<!--      }-->
+<!--    </script>-->
 
 
 
