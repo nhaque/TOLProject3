@@ -19,6 +19,33 @@ body {
   src: url(../assets/open-sans/OpenSans-Bold.ttf);
 }
 
+.content {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.content .title {
+  padding: 0 30% 0 30%;
+  font-size: 16pt;
+  text-align: left;
+}
+
+.content .title span {
+  color: #47adfb;
+}
+
+.content .option {
+  text-align: left;
+  padding: 0 33% 0 33%;
+}
+
+.feedback {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 18pt;
+}
+
+
 
 #page1 {
     display:flex;
