@@ -1,3 +1,3 @@
-# TOL Project 2 - Cooperative Learning
+# TOL Project 3 - Learnersourcing Quiz
 
-[How do Locks Work?](https://nhaque.github.io/TOL-Lock-2/index.html)
+[Learnersourcing Quiz](https://nhaque.github.io/TOLProject3/index.html)
