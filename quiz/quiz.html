@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Customizable Dynamic Quiz Basic Demo</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../dist/jquery.quiz-min.css" />
+  <style>
+  body { min-height: 100vh;background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); font-family: 'Roboto Condensed';}
+  .container {margin: 150px auto 30px auto; max-width: 640px;}
+  h1 { text-align: center; }
+</style>
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+ 
+
+  <div class="container">
+  <h1>Learnersourcing Quiz</h1>
+<div id="quiz">
+  <div id="quiz-header">
+    <h2>Let's do a quiz in the following time! Good luck!</h2>
+  </div>
+  <div id="quiz-start-screen">
+    <p><a href="quiz.html" id="quiz-start-btn" class="quiz-button">Start</a></p>
+  </div>
+</div>
+    <p style="text-align: center;">&copy; 2020. Created by Congying Zhang, Lillian Gong &amp; Nabeeha Fatima<br> </p>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<script src="../dist/jquery.quiz-min.js"></script>
+<script>
+  var opt_q1 = ['a1', 'b1', 'c1', 'd1'];
+
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  }
+
+  var inputopt = shuffle(opt_q1);
+  console.log(oninput);
+
+  $('#quiz').quiz({
+
+    counterFormat: 'Question %current of %total',
+    questions: [
+      {
+        'q': 'Every morning, Rajeev spends an hour alone drawing a portrait from a photograph in the day’s newspaper to improve his portraiture skills (skills drawing a portrait). Yet, despite a year of practice, his drawing skills do not seem to improved. Why might simply practicing a portrait a day not yield an improvement?',
+        'options': shuffle(inputopt),
+        'correctIndex': 1,
+        'correctResponse': 'Good job! Although Rajeev practiced every day, he didn’t improve because of the lack of feedback on his performance. It was not deliberate practice. \n',
+        'incorrectResponse': 'It is not true. Only practice is not enough for improvement. It is not because Rajeev selected the wrong way to practice but because he didn’t do deliberate practice with feedback on his performance.\n'
+      },
+      {
+        'q': 'Dan wants to improve his golf game. Every day, he practices one golf stroke for an hour, and records his practice session on video. After his practice, he watches the recording, and plans on what changes to make the next day. Assume he has no other golf instruction. Is Dan engaged in deliberate practice? Why? Select all that apply:',
+        'options': [
+          'Answer 1',
+          'Answer 2'
+        ],
+        'correctIndex': 1,
+        'correctResponse': 'It is correct. Deliberate practice needs expert to give feedback immediately on the performance, give instruction for methods, and suggest more practice. \n',
+        'incorrectResponse': 'It is not correct. Deliberate practice needs experts to give feedback immediately on the performance, give instruction for methods, and suggest more practice. '
+      },
+      {
+        'q': 'Mark is learning to play the guitar. After long hours of practice, he mastered playing his favorite song. Write one growth-mindset building feedback his instructor could give him. Select all that apply:',
+        'options': [
+          'Answer 1',
+          'Answer 2',
+          'Answer 3',
+          'Answer 4'
+        ],
+        'correctIndex': 2,
+        'correctResponse': 'It is good feedback. You mentioned Mark’s practice, hard work and persistence to imply that he will get future improve if he keep practicing. \n',
+        'incorrectResponse': 'The feedback can be improved by mentioning Mark’s practice, hard work, or persistence and imply that he will get future improvement if he keeps practicing. Only mention his current achievement and progress is not enough.'
+      },
+      {
+        'q': 'Many teachers who have used Jigsaw report that students start to see themselves in a different light -- as more competent, likable, and positive contributors to the classroom. Does the Jigsaw method create a growth-intelligence mindset? Select all that apply:',
+        'options': [
+          'Answer 1',
+          'Answer 2'
+        ],
+        'correctIndex': 1,
+        'correctResponse': 'Correct. The jigsaw method doesn’t implicate how the brain works and doesn’t help with the growth mindset.',
+        'incorrectResponse': 'This is not the correct answer. The jigsaw method helps with empathy and may improve teamwork. However, it doesn’t implicate how the brain works and doesn’t help with the growth mindset.\n'
+      }
+    ]
+  });
+</script>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>
