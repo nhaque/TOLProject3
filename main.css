@@ -19,8 +19,13 @@ body {
   src: url(../assets/open-sans/OpenSans-Bold.ttf);
 }
 
+
 .content {
   margin-top: 10%;
+  text-align: center;
+}
+
+.background {
   text-align: center;
 }
 
@@ -34,7 +39,7 @@ body {
   color: #47adfb;
 }
 
-.content .option {
+.page2 .option {
   text-align: left;
   padding: 0 33% 0 33%;
 }
