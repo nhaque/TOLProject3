@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Customizable Dynamic Quiz Basic Demo</title>
+  <title>TOL - Project 3</title>
   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="../dist/jquery.quiz-min.css" />
   <style>
@@ -21,7 +21,6 @@
   <h1>Learnersourcing Quiz</h1>
 <div id="quiz">
   <div id="quiz-header">
-    <h2>Let's do a quiz in the following time! Good luck!</h2>
   </div>
   <div id="quiz-start-screen">
     <p><a href="quiz.html" id="quiz-start-btn" class="quiz-button">Start</a></p>
@@ -37,28 +36,21 @@
     'even without deliberate practice, rajeev could improve his skill by practice',
     'lack of deliberate practice, to say, always practice a general and broad task set without pinpointing where exactly is not good\n'];
 
-  var correct_q1 = opt_q1[4].toString();
 
   var opt_q2 = ['the feedback needs to be given by an external agent\n',
     'not receiving immediate feedback may make rajeev not yield an improvement\n',
-    'also, he is not making adjustments frequent enough\n',
-    'finally, the third part of deliberate practice of getting informative feedback and remedial training could be argued that hes doing this for himself\n'];
+    'also, he is not making adjustments frequent enough',
+    'finally, the third part of deliberate practice of getting informative feedback and remedial training could be argued that hes doing this for himself'];
 
-  var correct_q2 = opt_q2[2].toString();
-
-  var opt_q3 = ['you made a great progress and that is due to your efforts, due to what you did rather than who you are\n',
+  var opt_q3 = ['you made a great progress and that is due to your efforts, due to what you did rather than who you are',
     'keep up with the great work',
     'great, you are doing well on this song because of your hard practice',
-    'great effort\n'];
+    'great effort'];
 
-  var correct_q3 = opt_q3[3].toString();
-
-  var opt_q4 = ['these students will feel they could also achieve better score if they work hard\n',
-    'yes, because it gives them the confidence that they can master a concept enough to teach others and help others do well when tested on that concept\n',
-    'especially for those low-achieving students, jigsaw enables them to learn from other membersin the expert group as well as jigsaw group, knowing that they could also learn as well as their peers\n',
+  var opt_q4 = ['these students will feel they could also achieve better score if they work hard',
+    'yes, because it gives them the confidence that they can master a concept enough to teach others and help others do well when tested on that concept',
+    'especially for those low-achieving students, jigsaw enables them to learn from other membersin the expert group as well as jigsaw group, knowing that they could also learn as well as their peers',
     'no, because it doesn’t implicate how the brain works, and the malleable nature of intelligence'];
-
-  var correct_q4 = opt_q4[4].toString();
 
   function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -68,27 +60,6 @@
 
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  }
-
-  function answerIndex(array, answer) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-
-      if (array[currentIndex].toString()==answer)
       currentIndex -= 1;
 
       // And swap it with the current element.
@@ -110,7 +81,7 @@
       {
         'q': 'Every morning, Rajeev spends an hour alone drawing a portrait from a photograph in the day’s newspaper to improve his portraiture skills (skills drawing a portrait). Yet, despite a year of practice, his drawing skills do not seem to improved. Why might simply practicing a portrait a day not yield an improvement?',
         'options': shuffle(inputopt),
-        'correctIndex': op,
+        'correctIndex': 2,
         'correctResponse': 'Good job! Although Rajeev practiced every day, he didn’t improve because of the lack of feedback on his performance. It was not deliberate practice. \n',
         'incorrectResponse': 'It is not true. Only practice is not enough for improvement. It is not because Rajeev selected the wrong way to practice but because he didn’t do deliberate practice with feedback on his performance.\n'
       },
