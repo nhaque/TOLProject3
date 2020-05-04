@@ -36,27 +36,28 @@
     'even without deliberate practice, rajeev could improve his skill by practice',
     'lack of deliberate practice, to say, always practice a general and broad task set without pinpointing where exactly is not good\n'];
 
-  var correct_q1 = opt_q1[4];
+  var correct_q1 = opt_q1[3];
 
   var opt_q2 = ['the feedback needs to be given by an external agent\n',
     'not receiving immediate feedback may make rajeev not yield an improvement\n',
     'also, he is not making adjustments frequent enough',
     'finally, the third part of deliberate practice of getting informative feedback and remedial training could be argued that hes doing this for himself'];
-  
+
+  var correct_q2 = opt_q2[2].toString();
 
   var opt_q3 = ['you made a great progress and that is due to your efforts, due to what you did rather than who you are',
     'keep up with the great work',
     'great, you are doing well on this song because of your hard practice',
     'great effort'];
 
-
+  var correct_q3 = opt_q3[2].toString();
 
   var opt_q4 = ['these students will feel they could also achieve better score if they work hard',
     'yes, because it gives them the confidence that they can master a concept enough to teach others and help others do well when tested on that concept',
     'especially for those low-achieving students, jigsaw enables them to learn from other membersin the expert group as well as jigsaw group, knowing that they could also learn as well as their peers',
     'no, because it doesn’t implicate how the brain works, and the malleable nature of intelligence'];
 
-
+  var correct_q4 = opt_q4[3].toString();
 
   function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -77,8 +78,22 @@
     return array;
   }
 
-  var inputopt = shuffle(opt_q1);
-  console.log(oninput);
+  function answerIndex(array, answer) {
+    var currentIndex = array.length;
+
+    // While there remain elements to shuffle...
+    while (array[currentIndex] !== answer) {
+        currentIndex -= 1;
+    }
+
+    return currentIndex;
+  }
+
+  var inputopt1 = shuffle(opt_q1);
+  var inputopt2 = shuffle(opt_q2);
+  var inputopt3 = shuffle(opt_q3);
+  var inputopt4 = shuffle(opt_q4);
+
 
   $('#quiz').quiz({
 
@@ -86,29 +101,29 @@
     questions: [
       {
         'q': 'Every morning, Rajeev spends an hour alone drawing a portrait from a photograph in the day’s newspaper to improve his portraiture skills (skills drawing a portrait). Yet, despite a year of practice, his drawing skills do not seem to improved. Why might simply practicing a portrait a day not yield an improvement?',
-        'options': shuffle(inputopt),
-        'correctIndex': 2,
+        'options': inputopt1,
+        'correctIndex': answerIndex(inputopt1, correct_q1),
         'correctResponse': 'Good job! Although Rajeev practiced every day, he didn’t improve because of the lack of feedback on his performance. It was not deliberate practice. \n',
         'incorrectResponse': 'It is not true. Only practice is not enough for improvement. It is not because Rajeev selected the wrong way to practice but because he didn’t do deliberate practice with feedback on his performance.\n'
       },
       {
         'q': 'Dan wants to improve his golf game. Every day, he practices one golf stroke for an hour, and records his practice session on video. After his practice, he watches the recording, and plans on what changes to make the next day. Assume he has no other golf instruction. Is Dan engaged in deliberate practice? Why? Select all that apply:',
-        'options': shuffle(opt_q2),
-        'correctIndex': 1,
+        'options': inputopt2,
+        'correctIndex': answerIndex(inputopt2, correct_q2),
         'correctResponse': 'It is correct. Deliberate practice needs expert to give feedback immediately on the performance, give instruction for methods, and suggest more practice. \n',
         'incorrectResponse': 'It is not correct. Deliberate practice needs experts to give feedback immediately on the performance, give instruction for methods, and suggest more practice. '
       },
       {
         'q': 'Mark is learning to play the guitar. After long hours of practice, he mastered playing his favorite song. Write one growth-mindset building feedback his instructor could give him. Select all that apply:',
-        'options': shuffle(opt_q3),
-        'correctIndex': 2,
+        'options': inputopt3,
+        'correctIndex': answerIndex(inputopt3, correct_q3),
         'correctResponse': 'It is good feedback. You mentioned Mark’s practice, hard work and persistence to imply that he will get future improve if he keep practicing. \n',
         'incorrectResponse': 'The feedback can be improved by mentioning Mark’s practice, hard work, or persistence and imply that he will get future improvement if he keeps practicing. Only mention his current achievement and progress is not enough.'
       },
       {
         'q': 'Many teachers who have used Jigsaw report that students start to see themselves in a different light -- as more competent, likable, and positive contributors to the classroom. Does the Jigsaw method create a growth-intelligence mindset? Select all that apply:',
-        'options': shuffle(opt_q4),
-        'correctIndex': 1,
+        'options': inputopt4,
+        'correctIndex': answerIndex(inputopt4, correct_q4),
         'correctResponse': 'Correct. The jigsaw method doesn’t implicate how the brain works and doesn’t help with the growth mindset.',
         'incorrectResponse': 'This is not the correct answer. The jigsaw method helps with empathy and may improve teamwork. However, it doesn’t implicate how the brain works and doesn’t help with the growth mindset.\n'
       }
